@@ -1,4 +1,4 @@
-package com.example.appquanlysinhvien;
+package com.example.appquanlysinhvien.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.appquanlysinhvien.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mapview();
+        // Recyclerview :
+//            * Hiển thị
+//                + Tên sinh viên
+//                + Lớp
+//                + Địa chỉ
+//           * Chức năng
+//                + Button cho xóa sinh viên
     }
 
     private void mapview() {
