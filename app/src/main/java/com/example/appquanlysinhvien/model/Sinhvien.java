@@ -1,5 +1,6 @@
 package com.example.appquanlysinhvien.model;
 
+
 public class Sinhvien {
     private String ten;
     private String lop;
