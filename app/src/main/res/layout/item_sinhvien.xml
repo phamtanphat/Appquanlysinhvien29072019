@@ -24,8 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@id/textviewDiachi"
         android:textStyle="bold"
         android:textColor="#131212"
         android:textSize="20sp"
@@ -33,10 +32,17 @@
         android:id="@+id/textviewLop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Button
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="Xóa"
+        android:id="@+id/buttonXoa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <View
         android:background="#0C0C0C"
         android:layout_marginTop="3dp"
-        android:layout_below="@id/textviewDiachi"
+        android:layout_below="@id/textviewLop"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 </RelativeLayout>
