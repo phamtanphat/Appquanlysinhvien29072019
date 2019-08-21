@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textviewTitle"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textColor="#f20"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quản lý sinh viên" />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textviewTitle"
+        android:hint="Tên sinh viên"
+        android:id="@+id/edittextTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/edittextTen"
+        android:hint="Lớp"
+        android:id="@+id/edittextLop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/edittextLop"
+        android:hint="Địa chỉ"
+        android:id="@+id/edittextDiachi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/edittextDiachi"
+        android:text="Hủy"
+        android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@id/edittextDiachi"
+        android:text="Thêm"
+        android:id="@+id/buttonAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
