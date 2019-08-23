@@ -15,6 +15,7 @@ import com.example.appquanlysinhvien.R;
 import com.example.appquanlysinhvien.model.Sinhvien;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Holder> {
 
@@ -32,7 +33,12 @@ public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Holder
         return new Holder(view);
     }
 
+    @Deprecated
     public void addSinhvien(@NonNull Sinhvien sinhvien) {
+        msinhviens.add(sinhvien);
+        notifyDataSetChanged();
+    }
+    public void addSinhvien2(@NonNull Sinhvien sinhvien) {
         msinhviens.add(sinhvien);
         notifyDataSetChanged();
     }
@@ -54,12 +60,19 @@ public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Holder
         TextView txtTen, txtLop, txtDiachi;
         Button btnXoa;
 
-        public Holder(@NonNull View itemView) {
+        public Holder(@NonNull final View itemView) {
             super(itemView);
             txtDiachi = itemView.findViewById(R.id.textviewDiachi);
             txtTen = itemView.findViewById(R.id.textviewTen);
             txtLop = itemView.findViewById(R.id.textviewLop);
             btnXoa = itemView.findViewById(R.id.buttonXoa);
+            btnXoa.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    msinhviens.remove(getLayoutPosition());
+                    notifyDataSetChanged();
+                }
+            });
         }
     }
 }
