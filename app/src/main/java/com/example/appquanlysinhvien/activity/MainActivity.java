@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.appquanlysinhvien.R;
 import com.example.appquanlysinhvien.adapter.SinhvienAdapter;
@@ -33,6 +35,33 @@ public class MainActivity extends AppCompatActivity {
 //           * Chức năng
 //                + Button cho xóa sinh viên
         init();
+        event();
+    }
+
+    private void event() {
+        btnHuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                edtLop.setText("");
+                edtTen.setText("");
+                edtDiachi.setText("");
+            }
+        });
+        btnThem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String ten = edtTen.getText().toString().trim();
+                String lop = edtLop.getText().toString().trim();
+                String diachi = edtDiachi.getText().toString().trim();
+
+                if (ten.length() <= 0 || lop.length() <= 0 || diachi.length()<= 0){
+                    Toast.makeText(MainActivity.this, "Bạn nhập thiếu thông tin", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                sinhvienAdapter.addSinhvien(new Sinhvien(ten,lop,diachi));
+
+            }
+        });
     }
 
     private void init() {

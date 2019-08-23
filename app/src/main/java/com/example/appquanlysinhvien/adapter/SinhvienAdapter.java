@@ -1,5 +1,6 @@
 package com.example.appquanlysinhvien.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appquanlysinhvien.R;
@@ -26,21 +28,26 @@ public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Holder
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_sinhvien,null);
+        View view = layoutInflater.inflate(R.layout.item_sinhvien, null);
         return new Holder(view);
+    }
+
+    public void addSinhvien(@NonNull Sinhvien sinhvien) {
+        msinhviens.add(sinhvien);
+        notifyDataSetChanged();
     }
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         Sinhvien sinhvien = msinhviens.get(position);
-        holder.txtTen.setText("Tên : "+ sinhvien.getTen());
-        holder.txtLop.setText("Lớp : "+ sinhvien.getLop());
-        holder.txtDiachi.setText("Địa chỉ : "+ sinhvien.getDiachi());
+        holder.txtTen.setText("Tên : " + sinhvien.getTen());
+        holder.txtLop.setText("Lớp : " + sinhvien.getLop());
+        holder.txtDiachi.setText("Địa chỉ : " + sinhvien.getDiachi());
     }
 
     @Override
     public int getItemCount() {
-        return msinhviens != null ? msinhviens.size() : 0 ;
+        return msinhviens != null ? msinhviens.size() : 0;
     }
 
     class Holder extends RecyclerView.ViewHolder {
